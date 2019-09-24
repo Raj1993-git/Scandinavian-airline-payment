@@ -63,15 +63,23 @@ public void flightbookingpage() throws InterruptedException, IOException, AWTExc
 	WebElement lp16 = lxpath("//button[@id='policy-accept']");
 	btnclick(lp16);
 	td(1000);
-for (int i = 0; i <16; i++) {
-	td(100);
-	ro();
-}
-ro1();	
+		/*
+		 * for (int i = 0; i <16; i++) { td(100); ro(); } ro1();
+		 */	
+	
+	List<WebElement> lp30 = slxpath("//div[@class='padding-t-17']");
+	System.out.println(lp30.size());
+	for (int i = 0; i < lp30.size(); i++) {
+		
+WebElement lp31 = lp30.get(2);
+btnclick(lp31);
+		
+	}
+	td(10000);
 WebElement lp10 = lxpath("//button[@id='return-button-cart']");
 JavascriptExecutor jk2=(JavascriptExecutor) driver;
 jk2.executeScript("arguments[0].click()", lp10);
-td(5000);
+td(4000);
  WebElement lp11 = lxpath("(//input[@tabindex='0'])[9]");
  lp11.sendKeys(getdata(2, 0));
  WebElement lp12 = lxpath("(//input[@tabindex='0'])[10]");
@@ -93,12 +101,17 @@ JavascriptExecutor jk5=(JavascriptExecutor) driver;
 jk5.executeScript("arguments[0].click()", lpp1);
 td(5000);
 
-	WebElement lp18 = lxpath("//li[@id='15A-1-11']");
-	JavascriptExecutor jk3=(JavascriptExecutor) driver;
-	jk3.executeScript("arguments[0].click()", lp18);
-	td(5000);
-	scrsht("C:\\Users\\Rajasekar\\Desktop\\number programs\\payment\\screeenshot2\\p3.1.png");
-	td(5000);
+		
+		  WebElement lp18 = lxpath("//li[@id='2D-1-11']"); 
+		  JavascriptExecutor jk6=(JavascriptExecutor) driver;
+		  jk6.executeScript("arguments[0].click()", lp18);
+		  
+		  
+		  
+		  
+		  scrsht("C:\\Users\\Rajasekar\\Desktop\\number programs\\payment\\screeenshot2\\p3.1.png"); 
+		  td(5000);
+		 
 	WebElement lp19 = lxpath("//button[@id='cart-button']");
 	btnclick(lp19);
 		
@@ -119,15 +132,6 @@ td(2000);
 
 
 
-System.out.println("In the above program the following queries need to be sorted" +
-"---Stale element exception" +
-"----How to hold the dynamically changing attributes"
-+ "  MOST IMPORTANT---------------------------------"
-+ " line number 106-108 has been blocked, this feature will appear only if you done selecting seats for the first time "
-+ " with line number 96-98, that means the seat is already booked when I carried out the test on my "
-+ " personal computer, when you run the code again fot the second time  seat will in reserved condition"
-+ " therefore I attached them as screen shot @p3"); 
-td(20000);
 }
 @After
 public void timend() {
@@ -135,8 +139,6 @@ public void timend() {
 	System.out.println(d);}
 
 	
-	  @AfterClass public static void end() throws InterruptedException {
- q(); }
 	 
 
 }
